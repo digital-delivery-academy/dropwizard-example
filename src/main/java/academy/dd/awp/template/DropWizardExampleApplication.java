@@ -2,9 +2,11 @@ package academy.dd.awp.template;
 
 import academy.dd.awp.template.health.TemplateHealthCheck;
 import academy.dd.awp.template.resources.DropWizardResource;
+
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+
 
 public class DropWizardExampleApplication extends Application<DropWizardExampleConfiguration> {
 
@@ -33,7 +35,6 @@ public class DropWizardExampleApplication extends Application<DropWizardExampleC
                 new TemplateHealthCheck(configuration.getTemplate());
         environment.healthChecks().register("template", healthCheck);
         environment.jersey().register(resource);
-
     }
 }
 

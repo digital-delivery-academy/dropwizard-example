@@ -1,0 +1,1 @@
+web: java -jar target/dropwizard-example-1.2.1-SNAPSHOT.jar server example.yml
