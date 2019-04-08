@@ -1,19 +1,19 @@
 language: java
 
 install:
-- mvn clean install -Dmaven.javadoc.skip=true -B -V
+- mvn install -B -V
 
 deploy:
   - provider: elasticbeanstalk
     skip_cleanup: true
-    zip_file: 'dist/allocation-assembly-TEST.zip'
+    zip_file: 'dropwizard-example-1.2.1-SNAPSHOT-assembly.zip'
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key:
       secure: $AWS_SECRET_ACCESS_KEY
     region: "eu-west-2"
-    app: "AWP-TEST"
-    env: "allocation-test-env"
+    app: "template"
+    env: "Template-env"
     bucket_name: "elasticbeanstalk-eu-west-2-437443739767"
     on:
-      branch: all
+      all_branches: true
 
